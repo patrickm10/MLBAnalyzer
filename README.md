@@ -24,4 +24,21 @@ Install dependencies:
 ```bash
 pip install polars requests
 
-<pre> mlb_stats_project/ │ ├── hitting/ │ ├── hitting_stats.py # Script to fetch hitting stats │ ├── 2020.csv │ ├── 2021.csv │ ├── 2022.csv │ ├── 2023.csv │ ├── 2024.csv │ └── mlb_hitting_data_all_years.csv │ ├── pitching/ │ ├── pitching_stats.py # Script to fetch pitching stats │ ├── 2020.csv │ ├── 2021.csv │ ├── 2022.csv │ ├── 2023.csv │ ├── 2024.csv │ └── mlb_pitching_data_all_years.csv │ ├── README.md # Project documentation ├── requirements.txt # (Optional) Python dependencies </pre>
+mlb_stats_project/
+├── hitting/
+│   ├── 2020.csv
+│   ├── 2021.csv
+│   ├── 2022.csv
+│   ├── 2023.csv
+│   ├── 2024.csv
+│   └── full_mlb_hitting_data.csv
+│
+├── pitching/
+│   ├── 2020.csv
+│   ├── 2021.csv
+│   ├── 2022.csv
+│   ├── 2023.csv
+│   ├── 2024.csv
+│   └── full_mlb_pitching_data.csv
+│
+├── README.md                          
