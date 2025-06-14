@@ -14,6 +14,7 @@ def get_hitting_data(year: int) -> pl.DataFrame:
             f"https://statsapi.mlb.com/api/v1/stats"
             f"?stats=season&group=hitting&gameType=R&season={year}"
         )
+        print(url)
         response = requests.get(url)
         response.raise_for_status()
         json_data = response.json()
@@ -32,9 +33,9 @@ def get_hitting_data(year: int) -> pl.DataFrame:
         print(f"{e}")
 
     df = pl.DataFrame(records)
-    # print(df)
+    print(df)
 
-    df.write_csv(f"Stats/mlb_hitting_data_{year}.csv")
+    df.write_csv(f"Stats/hitting/mlb_hitting_data_{year}.csv")
     return df
 
 def main():
@@ -45,10 +46,10 @@ def main():
         if df.height > 0:
             total_df.append(df)
 
-        if total_df:
-            combined_df = pl.concat(total_df, how="vertical")
-            combined_df.write_csv("Stats/Hitting/full_mlb_hitting_data.csv")
-            print(combined_df)
+    if total_df:
+        combined_df = pl.concat(total_df, how="vertical")
+        combined_df.write_csv("Stats/hitting/full_mlb_hitting_data.csv")
+        print(combined_df)
 
 if __name__ == "__main__":
     main()
